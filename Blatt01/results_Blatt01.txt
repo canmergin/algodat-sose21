@@ -1,56 +1,58 @@
-canergin,  23.04.2021, 00:33:27, 4c426c4b7d4a4f701ab2f8090f0a6d1867f103d3
+canergin,  27.04.2021, 00:34:01, 00b3e350ed861a8ff70a8852a52bac3e4e080cd3
 Korrektur Blatt 1
 
 Aufgabe 3.1
 	Checks Implementation of Constructor of CorticalNeuron: 4/4
-	Checks Implementation of Constructor of Interneuron: 0/4
-	  java.lang.AssertionError: Nullpointer- you cannot add any synapses to the ArrayList outgoingsynapses, if you do not initiate it. did not expect to find [false] but found [true]
+	Checks Implementation of Constructor of Interneuron: 4/4
 	Checks Implementation of Constructor of Photoreceptor: 0/7
-	  java.lang.AssertionError: Nullpointer- you cannot add any synapses to the ArrayList outgoingsynapses, if you do not initiate it. did not expect to find [false] but found [true]
-Total points for Aufgabe 3.1: 4/15
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
+Total points for Aufgabe 3.1: 8/15
 
 Aufgabe 3.2
 	Checks implementation of the get methods.: 5/5
 	Checks implementation of addSynapse of Photoreceptor: 0/5
-	   java.lang.NullPointerException in Photoreceptor.addSynapse(Photoreceptor.java:43)
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
 	Checks implementation of addSynapse in Network: 0/2
-	   java.lang.NullPointerException in Network.<init>(Network.java:48)
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
 	Checks implementation of addSynapse in Network on whether the neurons addSynapse-method was used.: 0/3
-	   java.lang.NullPointerException in Network.<init>(Network.java:48)
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
 Total points for Aufgabe 3.2: 5/15
 
 Aufgabe 3.3
 	Checks implementation of constructor in Network for the expected exceptions: 5/5
 	Checks implementation of constructor in Network for the correct setup of the neurons array.: 0/15
-	   java.lang.NullPointerException in Network.<init>(Network.java:48)
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
 	Checks if the class variables are initiated in the implementation of constructor in Network, which should always ne done. E.g. receptors is used in the colors-method.: 0/5
-	   java.lang.NullPointerException in Network.<init>(Network.java:48)
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
+
 Total points for Aufgabe 3.3: 5/25
 
 Aufgabe 3.4
-	Checks implementation of intergrateSignal in Interneuron: Is the signal transmitted to the next neuron?: 0/8
-	   java.lang.NullPointerException in Neuron.addSynapse(Neuron.java:38)
+	Checks implementation of intergrateSignal in Interneuron: Is the signal transmitted to the next neuron?: 8/8
 	Checks implementation of intergrateSignal in Interneuron: Is the signal evenly distributed between the outgoing synapses?: 0/7
-	   java.lang.NullPointerException in Neuron.addSynapse(Neuron.java:38)
-Total points for Aufgabe 3.4: 0/15
+	  java.lang.AssertionError: Wrong result. Possible skaling issues. did not expect to find [true] but found [false]
+Total points for Aufgabe 3.4: 8/15
 
 Aufgabe 3.5
 	Checks implementation of signalprocessing in Network in a simple network.: 0/15
-	  java.lang.Error: Unresolved compilation problems: 
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
 
 	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 0/15
-	  java.lang.Error: Unresolved compilation problems: 
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
-	Type mismatch: cannot convert from int to double[]
+	  java.lang.Error: Unresolved compilation problem: 
+	Implicit super constructor Neuron() is undefined. Must explicitly invoke another constructor
 
 Total points for Aufgabe 3.5: 0/30
 
-Total points: 14/100
+Total points: 26/100
