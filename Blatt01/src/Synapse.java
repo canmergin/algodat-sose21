@@ -43,9 +43,9 @@ public class Synapse {
 	 * 
 	 * @return receiver
 	 */
-		public Neuron getPost() {
+	public Neuron getPost() {
 			return postsynaptic;
-		}
+	}
 
 
 	/**

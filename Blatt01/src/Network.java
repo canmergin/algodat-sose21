@@ -39,17 +39,23 @@ public class Network {
 	 */
 	
 	public Network(int inter, int receptors, int cortical) {
+		this.neurons = new Neuron[inter+receptors+cortical];
 		if (receptors < 3 || inter < receptors ) { throw new RuntimeException(); }
 		else {
 			this.receptors = receptors;
 			this.cortical = cortical;
 			int index;
 			for(index = 0; index < receptors; index++ ) {
-				if (index % 3 == 0) { neurons[index] = new Photoreceptor(index, receptortypes[0]); }
-				else if (index % 3 == 1) { neurons[index] = new Photoreceptor(index, receptortypes[1]); }
-				else if (index % 3 == 2) { neurons[index] = new Photoreceptor(index, receptortypes[2]); }
+				if (index % 3 == 0) { this.neurons[index] = new Photoreceptor(index, receptortypes[0]); }
+				else if (index % 3 == 1) { this.neurons[index] = new Photoreceptor(index, receptortypes[1]); }
+				else if (index % 3 == 2) { this.neurons[index] = new Photoreceptor(index, receptortypes[2]); }
 			}
-			int indexOfLastReceptor = index;
+			for(; index < receptors + cortical; index++ ) {
+				this.neurons[index] = new CorticalNeuron(index);
+			}
+			for (; index < receptors + inter + cortical; index++) {
+				this.neurons[index] = new Interneuron(index);
+			}
 
 		}
 	}
@@ -66,7 +72,7 @@ public class Network {
 	 */
 
 	public void addSynapse(Neuron n1, Neuron n2) {
-		new Synapse(n1, n2);
+		n1.addSynapse(new Synapse(n1,n2));
 	}
 	/**
 	 * Processes the light waves. The lightwaves are integrated by the
@@ -78,11 +84,8 @@ public class Network {
 	 *            light waves in nm
 	 * @return the neural signal that can be used to classify the color
 	 */
-	// changed double[] to int in function head and return 0 instead of return signal
-		public int signalprocessing(double[] input) {
-			double[] signal;
-			// TODO
-			return 0;
+		public double[] signalprocessing(double[] input) {
+			return input;
 		}
 
 	public double[] countColorreceptors() {

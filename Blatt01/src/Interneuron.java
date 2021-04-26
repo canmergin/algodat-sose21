@@ -13,6 +13,8 @@ public class Interneuron extends Neuron {
 	 */
 	public Interneuron(int index) {
 		super(index);
+		this.outgoingsynapses = new ArrayList<Synapse>();
+
 	}
 
 	/**
@@ -24,7 +26,9 @@ public class Interneuron extends Neuron {
 	 */
 	@Override
 	public double[] integrateSignal(double[] signal) {
-		// TODO
+		for (int i = 0; i < outgoingsynapses.size(); i++) {
+			this.outgoingsynapses.get(i).transmit(signal);
+		}
 		return signal;
 	}
 }
