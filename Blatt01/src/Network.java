@@ -85,6 +85,12 @@ public class Network {
 	 * @return the neural signal that can be used to classify the color
 	 */
 		public double[] signalprocessing(double[] input) {
+			//for(int i = 0; i < this.receptors; i++) {
+				//neurons[i].integrateSignal(input);
+			//}
+			//for(int j = this.receptors; j < receptors + cortical; j++) {
+				//neurons[j]
+			//}
 			return input;
 		}
 

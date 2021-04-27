@@ -26,11 +26,14 @@ public class Interneuron extends Neuron {
 	 */
 	@Override
 	public double[] integrateSignal(double[] signal) {
-		for (int i = 0; i < outgoingsynapses.size(); i++) {
+		int signalLength = signal.length;
+		for (int c = 0; c < signalLength; c++) {
+			signal[c] = signal[c] / this.outgoingsynapses.size();
+		}
+		for (int i = 0; i < this.outgoingsynapses.size(); i++) {
 			this.outgoingsynapses.get(i).transmit(signal);
 		}
 		return signal;
 	}
 }
-
 
