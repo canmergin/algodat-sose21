@@ -29,6 +29,7 @@ public abstract class Neuron {
 	 */
 	public abstract double[] integrateSignal(double[] signal);
 
+
 	/**
 	 * Adds outgoing synapse to the Neuron
 	 * 

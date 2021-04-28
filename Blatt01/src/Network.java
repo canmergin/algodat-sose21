@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * The Network class implements a neural network.
  * The network consists of three types of neurons: photoreceptors(@see
@@ -85,13 +82,17 @@ public class Network {
 	 * @return the neural signal that can be used to classify the color
 	 */
 		public double[] signalprocessing(double[] input) {
-			//for(int i = 0; i < this.receptors; i++) {
-				//neurons[i].integrateSignal(input);
-			//}
-			//for(int j = this.receptors; j < receptors + cortical; j++) {
-				//neurons[j]
-			//}
-			return input;
+			for(int i = 0; i < receptors; i++) {
+				neurons[i].integrateSignal(input);
+			}
+			double[] neuralSignal = new double[3];
+			for(int i = 0; i < 3; i++) {
+				for (int k = receptors; k < receptors + cortical; k++) {
+					neuralSignal[i] += ((CorticalNeuron) neurons[k]).getSignal()[i];
+				}
+				neuralSignal[i] /= countColorreceptors()[i];
+			}
+			return neuralSignal;
 		}
 
 	public double[] countColorreceptors() {
