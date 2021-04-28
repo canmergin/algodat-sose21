@@ -1,4 +1,4 @@
-canergin,  28.04.2021, 00:34:00, a7596e2626695279973c78fc4aca9e7eaf3f7a35
+canergin,  29.04.2021, 00:34:07, 74888e2e8e3c805b93c40eeeb769eab78bc03a28
 Korrektur Blatt 1
 
 Aufgabe 3.1
@@ -26,10 +26,8 @@ Aufgabe 3.4
 Total points for Aufgabe 3.4: 15/15
 
 Aufgabe 3.5
-	Checks implementation of signalprocessing in Network in a simple network.: 0/15
-	  java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 0/15
-	  java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-Total points for Aufgabe 3.5: 0/30
+	Checks implementation of signalprocessing in Network in a simple network.: 15/15
+	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 15/15
+Total points for Aufgabe 3.5: 30/30
 
-Total points: 70/100
+Total points: 100/100
