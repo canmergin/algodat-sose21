@@ -32,6 +32,7 @@ public class Dec2Bin {
      */
     public void convert(int N) {
         this.N = N;
+        if (binStack.size() != 0) binStack.clear();
         do {
             this.binStack.push(N % 2);
             N /= 2;
@@ -55,6 +56,7 @@ public class Dec2Bin {
 
     public static void main(String[] args) {
         Dec2Bin dec2bin = new Dec2Bin();
+        dec2bin.convert(128);
         System.out.println("Die Zahl " + dec2bin.getN() + " in Binärdarstellung: " + dec2bin.toString());
         //testttt
         // Do it another time to demonstrate that toString does not erase the binStack.
