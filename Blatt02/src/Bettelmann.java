@@ -54,7 +54,41 @@ public class Bettelmann {
      * to the bottom of her/his closed pile of cards.
      */
     public void playRound() {
-        // TODO implement this method
+        Stack<Card> openPile1 = new Stack<>();
+        Stack<Card> openPile2 = new Stack<>();
+        do {
+            if (this.closedPile1.isEmpty()) {
+                this.winner = 2;
+                break;
+            } else if (this.closedPile2.isEmpty()) {
+                this.winner = 1;
+                break;
+            }
+            openPile1.push(this.closedPile1.pop());
+            openPile2.push(this.closedPile2.pop());
+        } while (openPile1.peek().compareTo(openPile2.peek()) == 0); // Player 2 wins the round
+        if (openPile1.peek().compareTo(openPile2.peek()) < 0) {
+            for (Card cards : openPile2) {
+                this.closedPile2.addLast(cards);
+            }
+            for (Card cards : openPile1) {
+                this.closedPile2.addLast(cards);
+            }
+        } else if (openPile1.peek().compareTo(openPile2.peek()) > 0) { // Player 1 wins the round
+            for (Card cards : openPile1) {
+                this.closedPile1.addLast(cards);
+            }
+            for (Card cards : openPile2) {
+                this.closedPile1.addLast(cards);
+            }
+        }
+        if (this.closedPile1.isEmpty()) {
+            this.winner = 2;
+        } else if (this.closedPile2.isEmpty()) {
+            this.winner = 1;
+        }
+        openPile1.clear();
+        openPile2.clear();
     }
 
     /**
@@ -91,7 +125,7 @@ public class Bettelmann {
      */
     public void distributeCards() {
         Stack<Card> deck = new Stack<>();
-        for (int i = 0; i < Card.nCards; i++){
+        for (int i = 0; i < Card.nCards; i++) {
             deck.add(new Card(i));
         }
         Collections.shuffle(deck);
@@ -109,14 +143,14 @@ public class Bettelmann {
     }
 
     public static void main(String[] args) {
-/*
-        // Game with a complete, shuffled deck
-        Bettelmann game = new Bettelmann();
-        game.distributeCards();
-*/
+
+        //Game with a complete, shuffled deck
+        //Bettelmann game = new Bettelmann();
+        //game.distributeCards();
+
 
         // For testing, you may also use specific distribtions and a small number of cards like this:
-        int[] deckArray = {28, 30, 6, 23, 17, 14};
+        int[] deckArray = {31, 0, 0, 25};
         Stack<Card> deck = new Stack<>();
         for (int id : deckArray) {
             deck.push(new Card(id));
@@ -127,7 +161,7 @@ public class Bettelmann {
         // This part is the same for both of the above variants
         System.out.println("Initial situation (top card first):\n" + game);
         int round = 0;
-        while (round < 1000000 && game.getWinner()<0) {
+        while (round < 1000000 && game.getWinner() < 0) {
             round++;
             game.playRound();
             System.out.println("State after round " + round + ":\n" + game);
