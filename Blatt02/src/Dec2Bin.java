@@ -1,7 +1,4 @@
 import java.util.Stack;
-import org.junit.jupiter.api.Test;
-import java.util.Random;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * A class for constructing a Decimal-to-Binary Number- Converter; * contains a main method for demonstration.
@@ -59,8 +56,8 @@ public class Dec2Bin {
 
     public static void main(String[] args) {
         Dec2Bin dec2bin = new Dec2Bin();
-        dec2bin.convert(9858111);
-        dec2bin.convert(15);
+        dec2bin.convert(2);
+        dec2bin.convert(7);
         System.out.println("Die Zahl " + dec2bin.getN() + " in Binärdarstellung: " + dec2bin.toString());
         //testttt
         // Do it another time to demonstrate that toString does not erase the binStack.
