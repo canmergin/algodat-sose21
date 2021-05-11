@@ -67,21 +67,22 @@ public class Bettelmann {
             openPile1.push(this.closedPile1.pop());
             openPile2.push(this.closedPile2.pop());
         } while (openPile1.peek().compareTo(openPile2.peek()) == 0); // Player 2 wins the round
-        if (openPile1.peek().compareTo(openPile2.peek()) < 0) {
-            for (Card cards : openPile2) {
-                this.closedPile2.addLast(cards);
+        if (!openPile1.isEmpty() && !openPile2.isEmpty())
+            if (openPile1.peek().compareTo(openPile2.peek()) < 0) {
+                for (Card cards : openPile2) {
+                    this.closedPile2.addLast(cards);
+                }
+                for (Card cards : openPile1) {
+                    this.closedPile2.addLast(cards);
+                }
+            } else if (openPile1.peek().compareTo(openPile2.peek()) > 0) { // Player 1 wins the round
+                for (Card cards : openPile1) {
+                    this.closedPile1.addLast(cards);
+                }
+                for (Card cards : openPile2) {
+                    this.closedPile1.addLast(cards);
+                }
             }
-            for (Card cards : openPile1) {
-                this.closedPile2.addLast(cards);
-            }
-        } else if (openPile1.peek().compareTo(openPile2.peek()) > 0) { // Player 1 wins the round
-            for (Card cards : openPile1) {
-                this.closedPile1.addLast(cards);
-            }
-            for (Card cards : openPile2) {
-                this.closedPile1.addLast(cards);
-            }
-        }
         if (this.closedPile1.isEmpty()) {
             this.winner = 2;
         } else if (this.closedPile2.isEmpty()) {
@@ -150,7 +151,7 @@ public class Bettelmann {
 
 
         // For testing, you may also use specific distribtions and a small number of cards like this:
-        int[] deckArray = {31, 0, 0, 25};
+        int[] deckArray = {3,5};
         Stack<Card> deck = new Stack<>();
         for (int id : deckArray) {
             deck.push(new Card(id));
