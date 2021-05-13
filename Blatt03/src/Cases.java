@@ -1,5 +1,5 @@
 /**
- * This is a heler class to switch the test cases in the PermutationTest class.
+ * This is a helper class to switch the test cases in the PermutationTest class.
  * Any changes made to this class will be lost for testing. This specific file is not used for our tests.
  */
 public class Cases {
