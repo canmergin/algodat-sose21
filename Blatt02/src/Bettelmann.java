@@ -57,7 +57,10 @@ public class Bettelmann {
         Stack<Card> openPile1 = new Stack<>();
         Stack<Card> openPile2 = new Stack<>();
         do {
-            if (this.closedPile1.isEmpty()) {
+            if (this.closedPile1.isEmpty() && this.closedPile2.isEmpty()) {
+                this.winner = 0;
+                break;
+            } else if (this.closedPile1.isEmpty()) {
                 this.winner = 2;
                 break;
             } else if (this.closedPile2.isEmpty()) {
@@ -83,7 +86,9 @@ public class Bettelmann {
                     this.closedPile1.addLast(cards);
                 }
             }
-        if (this.closedPile1.isEmpty()) {
+        if (this.closedPile1.isEmpty() && this.closedPile2.isEmpty()) {
+            this.winner = 0;
+        } else if (this.closedPile1.isEmpty()) {
             this.winner = 2;
         } else if (this.closedPile2.isEmpty()) {
             this.winner = 1;
@@ -146,18 +151,18 @@ public class Bettelmann {
     public static void main(String[] args) {
 
         //Game with a complete, shuffled deck
-        //Bettelmann game = new Bettelmann();
-        //game.distributeCards();
+        Bettelmann game = new Bettelmann();
+        game.distributeCards();
 
 
         // For testing, you may also use specific distribtions and a small number of cards like this:
-        int[] deckArray = {3,5};
-        Stack<Card> deck = new Stack<>();
-        for (int id : deckArray) {
-            deck.push(new Card(id));
-        }
-        Bettelmann game = new Bettelmann();
-        game.distributeCards(deck);
+        //int[] deckArray = {3,5,21,13,6,19,29,31,23,11};
+        //Stack<Card> deck = new Stack<>();
+        //for (int id : deckArray) {
+            //deck.push(new Card(id));
+        //}
+        //Bettelmann game = new Bettelmann();
+        //game.distributeCards(deck);
 
         // This part is the same for both of the above variants
         System.out.println("Initial situation (top card first):\n" + game);
