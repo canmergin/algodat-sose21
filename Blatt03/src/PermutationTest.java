@@ -63,11 +63,25 @@ class PermutationTest {
         }
         assertTrue(checkPermutation(p1));
         assertTrue(checkPermutation(p2));
+        assertTrue(checkDuplicateDerangement(p1.allDerangements));
+        assertTrue(checkDuplicateDerangement(p2.allDerangements));
     }
 
     void setCases(int c) {
         this.cases = c;
     }
+
+    public boolean checkDuplicateDerangement(LinkedList<int[]> derangements) {
+        for (int i = 0; i < derangements.size()-1; i++) {
+            for (int j = i + 1; j < derangements.size(); j++) {
+                if (Arrays.equals(derangements.get(i),derangements.get(j))){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 
     public boolean checkPermutation(PermutationVariation p) {
         List<Integer> originalList = convertArrayToList(p.original);
