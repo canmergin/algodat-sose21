@@ -1,0 +1,33 @@
+canergin,  06.06.2021, 21:30:29, zip submission
+Korrektur Blatt 1
+
+Aufgabe 3.1
+	Checks Implementation of Constructor of CorticalNeuron: 4/4
+	Checks Implementation of Constructor of Interneuron: 4/4
+	Checks Implementation of Constructor of Photoreceptor: 7/7
+Total points for Aufgabe 3.1: 15/15
+
+Aufgabe 3.2
+	Checks implementation of addSynapse of Photoreceptor: 5/5
+	Checks implementation of addSynapse in Network: 2/2
+	Checks implementation of addSynapse in Network on whether the neurons addSynapse-method was used.: 3/3
+	Checks implementation of the get methods.: 5/5
+Total points for Aufgabe 3.2: 15/15
+
+Aufgabe 3.3
+	Checks implementation of constructor in Network for the correct setup of the neurons array.: 15/15
+	Checks implementation of constructor in Network for the expected exceptions: 5/5
+	Checks if the class variables are initiated in the implementation of constructor in Network, which should always ne done. E.g. receptors is used in the colors-method.: 5/5
+Total points for Aufgabe 3.3: 25/25
+
+Aufgabe 3.4
+	Checks implementation of intergrateSignal in Interneuron: Is the signal transmitted to the next neuron?: 8/8
+	Checks implementation of intergrateSignal in Interneuron: Is the signal evenly distributed between the outgoing synapses?: 7/7
+Total points for Aufgabe 3.4: 15/15
+
+Aufgabe 3.5
+	Checks implementation of signalprocessing in Network in a simple network.: 15/15
+	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 15/15
+Total points for Aufgabe 3.5: 30/30
+
+Total points: 100/100
