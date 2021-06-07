@@ -1,0 +1,48 @@
+canergin,  07.06.2021, 14:06:13, 06d3db1b4018762826578435bd8cc97a29498468
+Korrektur Blatt 5
+
+Aufgabe 2.1
+	Liefert maxGainRecursive() die richtige Lösung für die Beispielspiele?: 0/7
+	  java.lang.AssertionError: Für Eingabe[4, 7, 2, 3] wird expected [4] but found [1]
+	Liefert maxGainRecursive() die richtige Lösung für kurze Zufallsspiele?: 0/18
+	  java.lang.AssertionError: Für Eingabe[18, 4, 0, 7] wird expected [15] but found [1]
+Total points for Aufgabe 2.1: 0/25
+
+Aufgabe 2.2
+	Hat maxGain() (maximal) quadratischen Speicherbedarf?: 5/5
+	Liefert maxGain() die richtige Lösung für lange Zufallsspiele?: 0/14
+	  java.lang.AssertionError: Für Eingabe[11, 18, 8, 0, 8, 5, 5, 1, 5, 12, 11, 18, 7, 6, 4, 18, 1, 3, 7, 6, 1, 9, 7, 14, 17, 0, 18, 8, 9, 2, 14, 11, 15, 17, 15, 9, 1, 19, 2, 17, 19, 7, 15, 3, 17, 5, 10, 2, 18, 12, 9, 13, 0, 1, 2, 15, 18, 13, 11, 8, 8, 8, 16, 0] wird expected [29] but found [1]
+	Liefert maxGain() die richtige Lösung für die Beispielspiele?: 0/7
+	  java.lang.AssertionError: Für Eingabe[4, 7, 2, 3] wird expected [4] but found [1]
+	Liefert maxGain() die richtige Lösung für kurze Zufallsspiele?: 0/14
+	  java.lang.AssertionError: Für Eingabe[16, 4] wird expected [12] but found [1]
+Total points for Aufgabe 2.2: 5/40
+
+Aufgabe 2.3
+	Liefert optimalSequence() eine richtige Lösung für zufällige Spiele?: 0/28
+	  java.lang.AssertionError: Suboptimale Sequenz zurückgegeben für Eingabe
+[12, 16, 4, 10, 3, 9, 9, 19, 16, 0, 11, 19, 19, 5, 14, 10, 2, 4, 4, 12]
+Gewinn expected [10] but found [0]
+	Liefert optimalSequence() eine richtige Lösung für die Beispielspiele?: 0/7
+	  java.lang.AssertionError: Suboptimale Sequenz zurückgegeben für Eingabe
+[4, 7, 2, 3]
+Gewinn expected [4] but found [0]
+Total points for Aufgabe 2.3: 0/35
+
+Aufgabe 3.1
+	Liefert optBottomUp() die richtige Lösung für die großen Beispiele?: 5/5
+	Benutzt optBottomUp() einen Zähler vom Typ long?: 0/5
+	  java.lang.AssertionError: Für den Strang
+TCATTTGTTCCAAATCGCTCTGTTACCTTAACAGTATTACGCGGGTCTTCACACGTAGCTGGAGGCATATCGTGTGGAGGTCGTAGGAGACTATATTCTCCGTGGGCCGCTCGGCAACCTTCGCTTGAATTTGTAAAACGGGCGTATCCCGCAACGGCGTCTGCGGTTGCAGTGAACACGCAGTGCAACGGCCTGTACCGGGTAATCAACGACTCCTGGGCGGTACGTGATATATCCTTCGCTCGACGGCAGTGTGGACACGGATTTTCAAACCAGCGTGGTCCACCCTAAGGTCGGCGTTATATATTCGATTGTGGTCCCATGATCCACCAGTGAGGCTGAGTCCGAACAAGTCGATTTCATCATCTGCTATCCGTTAGGTCCGAAGTCGATAGTGGTGCTTGCGCGTCTTCACCCCTCCTTCACATGTAACCACTGTTGGGTATTTGATTTCTGCCTGTCAGAGTGTCGGGCGCACTTACGAAAGAATGACTCCGAATCCGGCCCCTTAGGATGGGGCCGCTGCCATACCATCTACATAGCCTGGTTAAGGAATTTTGACGAGGACCCGCACTGCGCCTAGCCGTCATCTCGCCTATAGCCCGGACATCAACTGTGGTTCGTGCGTACTTGGCGTATAGGTTCTTATTAAGTGTGGCAGGCTGCGACAGATCACCATTATGTCCTACCGTGGAAATGCGCTCCCTCGGCGGGAAATCGCACTAGCGTCTAGAGTTATGGAGATAGATTAGCGAACCAAACTGCTGTTTAGTTAAAAGATGAAAATCTGGCACCAGCTCTAGCCGGCAAGAAGGGCCGGCCCACCGTATAAGCTCCAGATACTATTAAGACTTATGCTGCAAATCTTGCTCCTGTATACGATGTGGCTAGGTTCGGTAGGTGCAAACCCAAATGGAAACCAGTCTCCATAAGGCGGATTCAGGGTGCGCGGGTCGCTCCGGATCTTGCAATCCTGCCGGATAAGTCTGAGCGACCGAGTTCA
+ist die Anzahl der Lösungen expected [2217093120] but found [1]
+	Liefert optBottomUp() die richtige Lösung für die mittleren Beispiele?: 0/5
+	  java.lang.AssertionError: Für den Strang
+AAAGACTTTAAACGTGGGAAGCATGCTGACAGGAAGCAGATGATGCTCGCCTTACGAGAGTGGGAACGCAAGATGGTTGGACGCGTATGCGACTAGACACTTGGCAAAAGTGAGTTCAATACAACATGGGTAAGGCCGGGGTTGGATAATCCTGATTTCACGCCATAAATTGGTCTGTGTAAACCACTAGGCCATTATGA
+ist die Anzahl der Lösungen expected [0] but found [1]
+	Liefert optBottomUp() die richtige Lösung für die kleinen Beispiele?: 0/5
+	  java.lang.AssertionError: Für den Strang
+GTGGTAGATCTATGA
+ist die Anzahl der Lösungen expected [0] but found [1]
+Total points for Aufgabe 3.1: 5/20
+
+Total points: 10/100
