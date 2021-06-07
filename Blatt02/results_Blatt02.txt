@@ -1,68 +1,22 @@
-canergin,  03.05.2021, 03:51:25, 2de8a04bfa09f65cd03c28df095ef5e25a2d76af
+canergin,  07.06.2021, 13:03:10, e43fc878ed278d2602256502033858c5f805fae3
 Korrektur Blatt 2
 
 Aufgabe 3.1
+	Test convert() with several numbers: 10/10
 	Test basic functionality of convert(): 5/5
-	Test convert() with several numbers: 0/10
-	  java.lang.AssertionError: Method convert() was called for input N = 128.Then the value of the object variable binStack was (in LIFO order): [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1],
-which is not the expected output.
-The first half of test number have been passed successfully.For numbers of the second half, the expected output is not revealed.
-Total points for Aufgabe 3.1: 5/15
+Total points for Aufgabe 3.1: 15/15
 
 Aufgabe 3.2
+	Test output of toString() for several numbers: 5/5
 	Test basic functionality of toString(): 5/5
 	Test functionality of toString() for 0: 5/5
-	Test output of toString() for several numbers: 0/5
-	  java.lang.AssertionError: Method convert() was called for input 4, so we
-expected '100' as output of a subsequent call to toString(), but
-it returned '10010001'.
-Total points for Aufgabe 3.2: 10/15
+Total points for Aufgabe 3.2: 15/15
 
 Aufgabe 4.2
-	Test the winner of  playRound() with several sample games: 0/15
-	  java.lang.AssertionError: We tested playRound() in the following situation:
-Player 1: [♥D, ♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10]
-Player 2: [♥9, ♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
-Your method resulted in the following situation
-Player 1: [♥D, ♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10]
-Player 2: [♥9, ♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
-while we expected:
-Player 1: [♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10, ♥D, ♥9]
-Player 2: [♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
+	Test the winner of  playRound() with several sample games: 15/15
+	Test playRound() with several sample games: 20/20
+	Test basic functionality of playRound(): 25/25
+	Test the winner playRound() with some special games: 10/10
+Total points for Aufgabe 4.2: 70/70
 
-	Test playRound() with several sample games: 0/20
-	  java.lang.AssertionError: We tested playRound() in the following situation:
-Player 1: [♥D, ♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10]
-Player 2: [♥9, ♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
-Your method resulted in the following situation
-Player 1: [♥D, ♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10]
-Player 2: [♥9, ♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
-while we expected:
-Player 1: [♠10, ♠K, ♣A, ♥K, ♦K, ♥7, ♦D, ♦A, ♦9, ♠B, ♠9, ♦8, ♣10, ♣8, ♥10, ♥D, ♥9]
-Player 2: [♦B, ♣K, ♦7, ♦10, ♠D, ♠8, ♣B, ♣D, ♥A, ♥8, ♣7, ♠7, ♠A, ♥B, ♣9]
-
-	Test basic functionality of playRound(): 0/25
-	  java.lang.AssertionError: We tested playRound() in the following situation:
-Player 1: [♦7, ♣K]
-Player 2: [♦A, ♥7]
-Your method resulted in the following situation
-Player 1: [♦7, ♣K]
-Player 2: [♦A, ♥7]
-while we expected:
-Player 1: [♣K]
-Player 2: [♥7, ♦A, ♦7]
-
-	Test the winner playRound() with some special games: 0/10
-	  java.lang.AssertionError: We tested playRound() in the following situation:
-Player 1: [♠D, ♠B, ♦B, ♠10, ♦10, ♣9, ♦9, ♥K, ♠8, ♣K, ♦8, ♦D, ♦A, ♠7, ♣A, ♦7]
-Player 2: [♣D, ♣B, ♥B, ♣10, ♥10, ♥D, ♥9, ♦K, ♣8, ♠K, ♥8, ♠9, ♥A, ♣7, ♠A, ♥7]
-Your method resulted in the following situation
-Player 1: [♠D, ♠B, ♦B, ♠10, ♦10, ♣9, ♦9, ♥K, ♠8, ♣K, ♦8, ♦D, ♦A, ♠7, ♣A, ♦7]
-Player 2: [♣D, ♣B, ♥B, ♣10, ♥10, ♥D, ♥9, ♦K, ♣8, ♠K, ♥8, ♠9, ♥A, ♣7, ♠A, ♥7]
-while we expected:
-Player 1: [♦9, ♥K, ♠8, ♣K, ♦8, ♦D, ♦A, ♠7, ♣A, ♦7]
-Player 2: [♥9, ♦K, ♣8, ♠K, ♥8, ♠9, ♥A, ♣7, ♠A, ♥7, ♣D, ♣B, ♥B, ♣10, ♥10, ♥D, ♠D, ♠B, ♦B, ♠10, ♦10, ♣9]
-
-Total points for Aufgabe 4.2: 0/70
-
-Total points: 15/100
+Total points: 100/100
