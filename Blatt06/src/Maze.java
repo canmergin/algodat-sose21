@@ -82,7 +82,7 @@ public class Maze {
         RandomDepthFirstPaths mazePaths = new RandomDepthFirstPaths(mazeGraph, startnode);
         mazePaths.randomNonrecursiveDFS(mazeGraph);
         int[] randomPath = mazePaths.edge();
-        for (int i = 0; i < randomPath.length; ++i) {
+        for (int i = 1; i < randomPath.length; ++i) {
             if (i != randomPath[i] && !hasEdge(i,randomPath[i]) && !hasEdge(randomPath[i],i)) {
                 addEdge(i, randomPath[i]);
             }
@@ -113,10 +113,10 @@ public class Maze {
 
 
     public static void main(String[] args) {
-        Maze testMaze = new Maze(5, 0);
+        Maze testMaze = new Maze(70, 0);
         Graph testGraph = testMaze.M();
         System.out.println(testGraph.toString());
-        GridGraph test = new GridGraph(testGraph,testMaze.findWay(0,5));
+        GridGraph test = new GridGraph(testGraph,testMaze.findWay(0,4500));
     }
 
 
