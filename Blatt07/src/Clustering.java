@@ -85,11 +85,11 @@ public class Clustering {
         for (int i = 0; i < numberOfClusters-1; i++) {
             sortedMST.removeLast();
         }
-        clusters = connectedComponents(sortedMST);
+        this.clusters = connectedComponents(sortedMST);
     }
 
     public List<List<Integer>> connectedComponents(LinkedList<Edge> sortedMST) {
-        UF unionFinder = new UF(G.V());
+        UF unionFinder = new UF(this.G.V());
         LinkedList<List<Integer>> clusters = new LinkedList<>();
         LinkedList<List<Integer>> clusters1 = new LinkedList<>();
         for (Edge e : sortedMST) {
@@ -131,11 +131,11 @@ public class Clustering {
         Collections.sort(sortedMST);
         for (Edge a : sortedMST) {
             newMST.add(a);
-            if (coefficientOfVariation(newMST) > threshold) {
+            if (coefficientOfVariation(newMST) > threshold) { // Calculated new at every step
                 newMST.removeLast();
             }
         }
-        clusters = connectedComponents(newMST);
+        this.clusters = connectedComponents(newMST);
     }
 
     /**
@@ -144,7 +144,18 @@ public class Clustering {
      * @return array of the number of the correctly classified data points per cluster
      */
     public int[] validation() {
-        return new int[3];
+        int[] tempArray = new int[this.clusters.size()];
+        for (int i = 0; i < this.clusters.size(); i++) {
+            int dimension = 0;
+            for (int j = 0; j < this.labeled.get(i).size(); j++) {
+                if (!this.clusters.get(i).contains(this.labeled.get(i).get(j))) {
+                    continue;
+                }
+                dimension++;
+            tempArray[i] = dimension;
+            }
+        }
+        return tempArray;
     }
 
     /**
@@ -197,7 +208,7 @@ public class Clustering {
 
 
     public static void main(String[] args) {
-        Clustering c = new Clustering(new In("graph_bigger.txt"));
+        Clustering c = new Clustering(new In("iris_small.txt"));
         c.findClusters(2);
         System.out.println(c.clusters.toString());
         c.plotClusters();
