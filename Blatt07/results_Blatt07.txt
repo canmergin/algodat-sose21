@@ -1,4 +1,4 @@
-canergin,  18.06.2021, 00:37:58, 79fb385dd7ef0bc4eb65bea9604765fc9506f00f
+canergin,  21.06.2021, 14:00:51, 675378b6e134ae85d9a2dd70e87095976b693289
 Korrektur Blatt 7
 
 Aufgabe 3.1
@@ -15,8 +15,7 @@ Aufgabe 3.4
 Total points for Aufgabe 3.4: 45/45
 
 Aufgabe 3.5
-	Funktioniert die Validierung für den IRIS Datensatz?: 0/20
-	  java.lang.AssertionError: Ihre Validierung für den IRIS Datensatz gibt nicht das richtige Ergebnis. did not expect to find [true] but found [false]
-Total points for Aufgabe 3.5: 0/20
+	Funktioniert die Validierung für den IRIS Datensatz?: 20/20
+Total points for Aufgabe 3.5: 20/20
 
-Total points: 80/100
+Total points: 100/100
