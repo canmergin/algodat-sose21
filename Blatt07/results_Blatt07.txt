@@ -1,21 +1,21 @@
-canergin,  21.06.2021, 14:00:51, 675378b6e134ae85d9a2dd70e87095976b693289
+canergin,  24.06.2021, 18:25:31, cf429bdbd20bf7bfe0fd7101ee37aaf2b694eed6
 Korrektur Blatt 7
 
 Aufgabe 3.1
-	Funktionieren die get- und set-Methode für die Koordinaten?: 5/5
+	Funktionieren die get- und set-Methode f??r die Koordinaten?: 5/5
 Total points for Aufgabe 3.1: 5/5
 
 Aufgabe 3.3
-	Funktioniert die Berechung der Cluster für vorgegebene Clusteranzahl richtig?: 30/30
+	Funktioniert die Berechung der Cluster f??r vorgegebene Clusteranzahl richtig?: 30/30
 Total points for Aufgabe 3.3: 30/30
 
 Aufgabe 3.4
 	Funktioniert die Berechung des Variationskoeffizienten richtig?: 10/10
-	Funktioniert die Berechung der Cluster für vorgegebenen threshold richtig?: 35/35
+	Funktioniert die Berechung der Cluster f??r vorgegebenen threshold richtig?: 35/35
 Total points for Aufgabe 3.4: 45/45
 
 Aufgabe 3.5
-	Funktioniert die Validierung für den IRIS Datensatz?: 20/20
+	Funktioniert die Validierung f??r den IRIS Datensatz?: 20/20
 Total points for Aufgabe 3.5: 20/20
 
 Total points: 100/100
