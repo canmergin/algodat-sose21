@@ -86,7 +86,7 @@ public class ContentAwareImageResizing {
         ShortestPathsTopological shortestPathsTopological = new ShortestPathsTopological(imageGraph, sx * sy);
         Stack<Integer> path = shortestPathsTopological.pathTo((sx * sy) + 1);
         int[] pathCoordinates = new int[path.size()];
-        path.pop();
+        path.pop(); //Remove the first node v = sx*sy
         for (int i = 0; i < shortestPathsTopological.pathTo(sx * sy + 1).size() - 1; i++) {
             int v = path.pop();
             Coordinate c = nodeToCoordinate(v);
