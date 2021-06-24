@@ -12,16 +12,18 @@ public class ContentAwareImageResizing {
 
     /**
      * Calculates the corresponding Node to a given coordinate (x,y)
+     *
      * @param x the x-coordinate
      * @param y the y-coordinate
      * @return the Node
      */
-     public int coordinateToNode(int x, int y) {
+    public int coordinateToNode(int x, int y) {
         return x + y * sx;
     }
 
     /**
      * Calculates the corresponding note to a given coordinate
+     *
      * @param p the Coordinate
      * @return the Node
      */
@@ -29,8 +31,9 @@ public class ContentAwareImageResizing {
         return coordinateToNode(p.x, p.y);
     }
 
-     /**
+    /**
      * converts a node (index of a node) to a pixel coordinate
+     *
      * @param v the Node
      * @return the Coordinate
      */
@@ -39,10 +42,12 @@ public class ContentAwareImageResizing {
         return new Coordinate(v - y * sx, y);
     }
 
-    /** Builds up a grid graph for representing an image with contrast values as weights.
-     *  add auxiliary source and target node
-     *  see figure 4 on the exercises sheet
-     *  @return the created graph
+    /**
+     * Builds up a grid graph for representing an image with contrast values as weights.
+     * add auxiliary source and target node
+     * see figure 4 on the exercises sheet
+     *
+     * @return the created graph
      */
     public WeightedDigraph makeVGraph() {
         WeightedDigraph graph = new WeightedDigraph(sx * sy + 2);
@@ -70,16 +75,29 @@ public class ContentAwareImageResizing {
         }
         return graph;
     }
-    
-    /** A method to get the vertical path with the least contrast in the Image Image
+
+    /**
+     * A method to get the vertical path with the least contrast in the Image Image
+     *
      * @return the Vertical Path with the least contrast
      */
     public int[] leastContrastImageVPath() {
-        // TODO
-        return new int[3];
+        WeightedDigraph imageGraph = makeVGraph();
+        ShortestPathsTopological shortestPathsTopological = new ShortestPathsTopological(imageGraph, sx * sy);
+        Stack<Integer> path = shortestPathsTopological.pathTo((sx * sy) + 1);
+        int[] pathCoordinates = new int[path.size()];
+        path.pop();
+        for (int i = 0; i < shortestPathsTopological.pathTo(sx * sy + 1).size() - 1; i++) {
+            int v = path.pop();
+            Coordinate c = nodeToCoordinate(v);
+            pathCoordinates[i] = c.x;
+        }
+        return pathCoordinates;
     }
-    
-    /** Removes a vertical path from the image
+
+    /**
+     * Removes a vertical path from the image
+     *
      * @param path
      */
     public void removeVPath(int[] path) {
@@ -102,7 +120,7 @@ public class ContentAwareImageResizing {
     public static void demoPictureImage(String filename) {
         PictureImage image = new PictureImage(filename);
         ContentAwareImageResizing cair = new ContentAwareImageResizing(image);
-        int nDeletions = image.sizeX()/2;
+        int nDeletions = image.sizeX() / 2;
         for (int k = 0; k < nDeletions; k++) {
             System.out.println("removing path " + k);
             cair.removeVPath(cair.leastContrastImageVPath());
@@ -111,10 +129,10 @@ public class ContentAwareImageResizing {
     }
 
     public static void main(String[] args) throws java.io.FileNotFoundException {
-//        demoPictureImage(args[0]);
-//        demoPictureImage("640px-Broadway_tower_edit.jpg");
-//        demoPictureImage("640px-foto_2017_07_30_202914-cropped.jpg");
-        demoMatrixImage("src/testImage.txt");
+        //demoPictureImage(args[0]);
+        demoPictureImage("src/640px-Broadway_tower_edit.jpg");
+        //demoPictureImage("src/640px-foto_2017_07_30_202914-cropped.jpg");
+        //demoMatrixImage("src/testImage.txt");
     }
 }
 
