@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Stack;
 
 public class ContentAwareImageResizing {
@@ -85,9 +86,9 @@ public class ContentAwareImageResizing {
         WeightedDigraph imageGraph = makeVGraph();
         ShortestPathsTopological shortestPathsTopological = new ShortestPathsTopological(imageGraph, sx * sy);
         Stack<Integer> path = shortestPathsTopological.pathTo((sx * sy) + 1);
-        int[] pathCoordinates = new int[path.size()];
+        int[] pathCoordinates = new int[this.sy];
         path.pop(); //Remove the first node v = sx*sy
-        for (int i = 0; i < shortestPathsTopological.pathTo(sx * sy + 1).size() - 1; i++) {
+        for (int i = 0; i < shortestPathsTopological.pathTo(sx * sy + 1).size() - 2; i++) {
             int v = path.pop();
             Coordinate c = nodeToCoordinate(v);
             pathCoordinates[i] = c.x;
@@ -130,9 +131,9 @@ public class ContentAwareImageResizing {
 
     public static void main(String[] args) throws java.io.FileNotFoundException {
         //demoPictureImage(args[0]);
-        demoPictureImage("src/640px-Broadway_tower_edit.jpg");
+        //demoPictureImage("src/640px-Broadway_tower_edit.jpg");
         //demoPictureImage("src/640px-foto_2017_07_30_202914-cropped.jpg");
-        //demoMatrixImage("src/testImage.txt");
+        demoMatrixImage("src/testImage.txt");
     }
 }
 
