@@ -129,6 +129,13 @@ public class FlowApplications {
         for (int i = 0; i < flowNetworkCopy.V(); i++) {
             markedForT[i] = fordFulkersonReverse.inCut(i);
         }
+        System.out.println(flowNetworkIn.toString());
+        for (FlowEdge e : flowNetworkIn.edges()) {
+            if (e.flow() != 0.0) {
+                e.addResidualFlowTo(e.from(),e.flow());
+            }
+        }
+        System.out.println(flowNetworkIn.toString());
         FordFulkerson fordFulkerson = new FordFulkerson(flowNetworkIn, s, t);
         for (int i = 0; i < flowNetworkIn.V(); i++) {
             markedForS[i] = fordFulkerson.inCut(i);
