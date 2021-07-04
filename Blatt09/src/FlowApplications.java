@@ -37,8 +37,6 @@ public class FlowApplications {
     }
 
 
-
-
     /**
      * numberOfEdgeDisjointPaths() returns the (maximum) number of edge-disjoint paths that exist in
      * an undirected graph between two nodes s and t using Edmonds-Karp.
@@ -54,11 +52,11 @@ public class FlowApplications {
         for (int i = 0; i < graph.V(); i++) {
             Iterator<Integer> adj = graph.adj(i).iterator();
             while (adj.hasNext()) {
-                FlowEdge flowEdgeOfGraph = new FlowEdge(i,adj.next(),1.00); // Capacity of the edges are 1.00, so when the FordFulkerson runs their capacity is reduced to 0.00, so they can not be used again.
+                FlowEdge flowEdgeOfGraph = new FlowEdge(i, adj.next(), 1.00); // Capacity of the edges are 1.00, so when the FordFulkerson runs their capacity is reduced to 0.00, so they can not be used again.
                 flowNetworkOfGraph.addEdge(flowEdgeOfGraph);
             }
         }
-        FordFulkerson fordFulkersonAlgorithm = new FordFulkerson(flowNetworkOfGraph,s,t);
+        FordFulkerson fordFulkersonAlgorithm = new FordFulkerson(flowNetworkOfGraph, s, t);
         int edgeDisjointPathCount = (int) fordFulkersonAlgorithm.value();
         return edgeDisjointPathCount;
     }
@@ -79,11 +77,11 @@ public class FlowApplications {
         for (int i = 0; i < graph.V(); i++) {
             Iterator<Integer> adj = graph.adj(i).iterator();
             while (adj.hasNext()) {
-                FlowEdge flowEdgeOfGraph = new FlowEdge(i,adj.next(),1.00); // Capacity of the edges are 1.00, so when the FordFulkerson runs their capacity is reduced to 0.00, so they can not be used again.
+                FlowEdge flowEdgeOfGraph = new FlowEdge(i, adj.next(), 1.00); // Capacity of the edges are 1.00, so when the FordFulkerson runs their capacity is reduced to 0.00, so they can not be used again.
                 flowNetworkOfGraph.addEdge(flowEdgeOfGraph);
             }
         }
-        FordFulkerson fordFulkersonAlgorithm = new FordFulkerson(flowNetworkOfGraph,s,t);
+        FordFulkerson fordFulkersonAlgorithm = new FordFulkerson(flowNetworkOfGraph, s, t);
         Bag<LinkedList<Integer>> paths = new Bag<>();
         int j = 0;
         int condition = (int) fordFulkersonAlgorithm.value();
@@ -122,29 +120,25 @@ public class FlowApplications {
         FlowNetwork flowNetworkCopy = new FlowNetwork(flowNetworkIn.V());
         for (FlowEdge e : flowNetworkIn.edges()) {
             flowNetworkCopy.addEdge(e);
-            FlowEdge copyEdge = new FlowEdge(e.to(),e.from(),e.capacity(),e.flow());
+            FlowEdge copyEdge = new FlowEdge(e.to(), e.from(), e.capacity());
             flowNetworkCopy.addEdge(copyEdge);
         }
         boolean[] markedForS = new boolean[flowNetworkIn.V()];
         boolean[] markedForT = new boolean[flowNetworkIn.V()];
-        FordFulkerson fordFulkersonReverse = new FordFulkerson(flowNetworkCopy,t,s);
+        FordFulkerson fordFulkersonReverse = new FordFulkerson(flowNetworkCopy, t, s);
         for (int i = 0; i < flowNetworkCopy.V(); i++) {
             markedForT[i] = fordFulkersonReverse.inCut(i);
         }
-        FordFulkerson fordFulkerson = new FordFulkerson(flowNetworkIn,s,t);
+        FordFulkerson fordFulkerson = new FordFulkerson(flowNetworkIn, s, t);
         for (int i = 0; i < flowNetworkIn.V(); i++) {
             markedForS[i] = fordFulkerson.inCut(i);
         }
-        int trueCounter = 0;
-        for (int i = 0; i < flowNetworkIn.V(); i++) {
-            if (markedForS[i]) {
-                trueCounter++;
-            }
-            if (markedForT[i]) {
-                trueCounter++;
+        for (int i = 0; i < markedForS.length; i++) {
+            if (markedForT[i] == markedForS[i]) {
+                return false;
             }
         }
-        return trueCounter == flowNetworkIn.V();
+        return true;
     }
 
 
@@ -160,13 +154,14 @@ public class FlowApplications {
      */
 
     public static LinkedList<Integer> findBottlenecks(FlowNetwork flowNetwork, int s, int t) {
-        FordFulkerson fordFulkerson = new FordFulkerson(flowNetwork,s,t);
+        FordFulkerson fordFulkerson = new FordFulkerson(flowNetwork, s, t);
         LinkedList<Integer> bottlenecks = new LinkedList<>();
         for (FlowEdge e : flowNetwork.edges()) {
             if ((fordFulkerson.inCut(e.from()) != fordFulkerson.inCut(e.to())) && !bottlenecks.contains(e.from())) {
                 bottlenecks.add(e.from());
             }
         }
+        bottlenecks.sort(Comparator.naturalOrder());
         return bottlenecks;
     }
 
