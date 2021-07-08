@@ -1,0 +1,34 @@
+canergin,  08.07.2021, 11:12:54, 45bd644ad8bd01acd8ce4dfc6567672a46fed4aa
+Korrektur Blatt 9
+
+Aufgabe 3.1
+	Test output of numberOfEdgeDisjointPaths() on medium-sized graphs: 10/10
+	Test output of numberOfEdgeDisjointPaths() on small graphs: 10/10
+Total points for Aufgabe 3.1: 20/20
+
+Aufgabe 3.2
+	Test output of edgeDisjointPaths() on medium-sized graphs: 10/10
+	Test output of edgeDisjointPaths() on small graphs: 10/10
+Total points for Aufgabe 3.2: 20/20
+
+Aufgabe 4.1
+	Test output of isUnique() on medium-sized flowgraphs: 20/20
+	Test output of isUnique() on a small flowgraph which is not unique due to a second source: 2/2
+	Test output of isUnique() on small flowgraphs: 0/18
+	  java.lang.AssertionError: Method 'isUnique()' does not return the expected result.
+Tests for flowgraphs that are disclosed on failure have been passed. This example will not be revealed.
+Total points for Aufgabe 4.1: 22/40
+
+Aufgabe 4.2
+	Test output of findBottlenecks() on medium-sized flowgraphs: 10/10
+	Test output of findBottlenecks() on small flowgraphs: 0/10
+	  java.lang.AssertionError: Method 'findBottlenecks()' does not return the expected result.
+We called findBottlenecks() for nodes #0 and #7
+in the flowgraph 'FlowNetwork4bottlenecks-S-4.txt' which can be downloaded from https://tubcloud.tu-berlin.de/s/J7mbT48XnLjMxDc.
+Our reference method returned:
+   [0, 2]
+while your returned (after sorting):
+   [0, 2, 5].
+Total points for Aufgabe 4.2: 10/20
+
+Total points: 72/100
