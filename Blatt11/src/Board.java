@@ -22,8 +22,8 @@ public class Board {
      * Constructor for a board of the Ricochet Robots game.
      * An empty board just with outer wall is created, and an empty list of robots.
      *
-     * @param nx Width of the board
-     * @param ny Height of the board
+     * @param nx      Width of the board
+     * @param ny      Height of the board
      * @param nRobots Number of robots that will be  placed on the board
      */
     public Board(int nx, int ny, int nRobots) {
@@ -46,20 +46,20 @@ public class Board {
 
     /**
      * Read a game situation from text file (or other input stream). First line is
-     *     nx ny nRobots
+     * nx ny nRobots
      * All subsequent lines start with an (x, y) position and then specify
-     *   1) a wall in a certain direction of the position (N, E, S, W)
-     *   2) a robot on that position (R0, R1, ...)
-     *   3) a target for a robot (T0, T1, ...)
+     * 1) a wall in a certain direction of the position (N, E, S, W)
+     * 2) a robot on that position (R0, R1, ...)
+     * 3) a target for a robot (T0, T1, ...)
      * Only one target is considered. If more than one target is specified,
      * later targets overwrite earlier declarations (even if it was for a
      * different robot - this game does not consider multiple targets).
      * Examples
-     *   2 3 E
+     * 2 3 E
      * puts a wall 'east' of position (2, 3)
-     *   4 0 R1
+     * 4 0 R1
      * puts robot with id #1 on position (4, 0)
-     *   3 1 T0
+     * 3 1 T0
      * declares that robot #0 is the designated robot that needs to reach
      * the target, and that the target is on position (3, 1).
      * Outer walls around the board are always added.
@@ -254,12 +254,11 @@ public class Board {
     }
 
 
-
     @Override
     public int hashCode() {
         LinkedList<Integer> test = new LinkedList<>();
         for (Robot r : this.robots) {
-            test.add(401*Objects.hashCode(r)*r.location.hashCode());
+            test.add(401 * Objects.hashCode(r) * r.location.hashCode());
         }
         return Objects.hash(test);
     }
@@ -268,15 +267,15 @@ public class Board {
     public static void main(String[] args) throws java.io.FileNotFoundException {
         System.setIn(new FileInputStream("samples/rrBoard-C3-6x4-02.txt"));
         Board board = new Board(new Scanner(System.in));
-        Move m1 = new Move(board,1,2);
+        Move m1 = new Move(board, 1, 2);
         board.doMove(m1);
-        Move m2 = new Move(board,1,1);
+        Move m2 = new Move(board, 1, 1);
         board.doMove(m2);
-        Move m3 = new Move(board,1,0);
+        Move m3 = new Move(board, 1, 0);
         board.doMove(m3);
-        Move m4 = new Move(board,0,1);
+        Move m4 = new Move(board, 0, 1);
         board.doMove(m4);
-        Move m5 = new Move(board,0,0);
+        Move m5 = new Move(board, 0, 0);
         board.doMove(m5);
         board.print();
         System.out.println(board.hashCode());
