@@ -247,14 +247,13 @@ public class Board {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Board)) {
-            return false;
-        }
-        if (this.hashCode() == o.hashCode()) {
-            return true;
-        }
-        return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board = (Board) o;
+        return nx == board.nx && ny == board.ny && nRobots == board.nRobots && targetRobot == board.targetRobot && Arrays.equals(robots, board.robots) && Objects.equals(targetPosition, board.targetPosition);
     }
+
+
 
     @Override
     public int hashCode() {
@@ -265,8 +264,9 @@ public class Board {
         return Objects.hash(test);
     }
 
+
     public static void main(String[] args) throws java.io.FileNotFoundException {
-        System.setIn(new FileInputStream("samples/rrBoard-sample00.txt"));
+        System.setIn(new FileInputStream("samples/rrBoard-C3-6x4-02.txt"));
         Board board = new Board(new Scanner(System.in));
         Move m1 = new Move(board,1,2);
         board.doMove(m1);

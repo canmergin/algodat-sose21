@@ -42,7 +42,7 @@ public class Position {
 
 
     public static void main(String[] args) {
-        Position p1 = new Position(-5,0);
+        Position p1 = new Position(20,20);
         Position p2 = new Position(1,0);
         System.out.println(p1.equals(p2));
         System.out.println(p2.equals(p1));
