@@ -1,0 +1,32 @@
+canergin,  16.07.2021, 00:35:41, 4aea451a727137d7393c709a99da028d84843160
+Korrektur Blatt 11
+
+Aufgabe 3.2
+	Test output of equals() on positions of a 20x20 board: 2/2
+	Test output of hashCode() on positions of a 20x20 board: 8/8
+Total points for Aufgabe 3.2: 10/10
+
+Aufgabe 3.3
+	Test output of equals(): 4/4
+	Test consistency of hashCode() with a correct equals() method: 5/5
+	Test distribution of hashCode() values (on asmall data set): 5/5
+	Test distribution of hashCode() values (and timeout may indicate insufficient running time): 5/5
+	Test whether equals() was implemented based on hashCode(), which it shouldn't: 0/1
+	  java.lang.AssertionError: Method equals() does not work as expceted.
+We called equals() for two different boards, for which hashCode() returns the same value.
+Since the boards are not equal, method equals() needs to return 'false', but yours returned 'true'.
+With such an equals() method, the bfs would not work.
+Total points for Aufgabe 3.3: 19/20
+
+Aufgabe 3.4
+	Test output of testBfsWithHashing() for tiny boards: 5/5
+	Test output of testBfsWithHashing() for boards of type XS: 10/10
+	Test output of testBfsWithHashing() for boards of type S: 15/15
+	Test output of testBfsWithHashing() for boards of type M: 20/20
+	Test output of testBfsWithHashing() for boards of type L: 0/20
+	  java.lang.AssertionError: Method 'bfsWithHashing()' does not return the expected result.
+We called bfsWithHashing() for board 'tests/samples/rrBoard-C3-6x4-02.txt' which can be downloaded from https://tubcloud.tu-berlin.de/s/8B5tDQJ6e2swtkP.
+The shortest solution has 27 moves, while your returned a move sequence containing 28 moves.Note, that a timeout may indicate that the method is not efficient (e.g. if hashing is not working properly).
+Total points for Aufgabe 3.4: 50/70
+
+Total points: 79/100
